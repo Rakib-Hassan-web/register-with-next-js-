@@ -27,7 +27,7 @@ const [FromData ,setFromData] = useState({
 
 const handleSub =(e)=>{
  e.preventDefault()
-    console.log('hea ')
+    console.log(FromData)
 
 }
 
@@ -48,6 +48,8 @@ const handleSub =(e)=>{
               Full Name
             </label>
             <input
+            onChange={(e)=>setFromData((prev)=> ({...prev, username:e.target.value}))}
+
               type="text"
               placeholder="Enter your name"
               className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -60,6 +62,7 @@ const handleSub =(e)=>{
               Email
             </label>
             <input
+            onChange={(e)=>setFromData((prev)=> ({...prev, email:e.target.value}))}
               type="email"
               placeholder="Enter your email"
               className="w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
