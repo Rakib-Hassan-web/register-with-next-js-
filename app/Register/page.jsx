@@ -5,8 +5,24 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 
 const page = () => {
+//   -------------------pass  show and  hide----------
       const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+
+
+//   ------------api fetch------------
+
+const [FromData ,setFromData] = useState({
+    
+  "email": "user.email@domain.com",
+  "password": "test@123",
+  "role": "ADMIN",
+  "username": "doejohn"
+
+})
+
+
   return (
     <>
     
