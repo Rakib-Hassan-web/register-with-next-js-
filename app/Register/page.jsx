@@ -15,13 +15,21 @@ const page = () => {
 
 const [FromData ,setFromData] = useState({
     
-  "email": "user.email@domain.com",
-  "password": "test@123",
+  "email": "",
+  "password": "",
   "role": "ADMIN",
-  "username": "doejohn"
+  "username": ""
 
 })
 
+
+
+
+const handleSub =(e)=>{
+ e.preventDefault()
+    console.log('hea ')
+
+}
 
   return (
     <>
@@ -33,7 +41,7 @@ const [FromData ,setFromData] = useState({
           Create an Account
         </h2>
 
-        <form className="space-y-4">
+        <form   onSubmit={handleSub} className="space-y-4">
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -106,7 +114,7 @@ const [FromData ,setFromData] = useState({
 
           {/* Register Button */}
           <button
-            type="button"
+            type="submit"
             className="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition duration-200"
           >
             Register
