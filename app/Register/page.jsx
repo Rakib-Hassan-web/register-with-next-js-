@@ -9,25 +9,34 @@ const page = () => {
       const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-
-
-//   ------------api fetch------------
-
-const [FromData ,setFromData] = useState({
+  
+  //   ------------api fetch------------
+  
+  const [FromData ,setFromData] = useState({
+      
+      "email": "",
+      "password": "",
+      "role": "ADMIN",
+      "username": ""
+      
+    })
     
-  "email": "",
-  "password": "",
-  "role": "ADMIN",
-  "username": ""
-
-})
+    
+    // ----------error State-----
+    
+    const [FromError , setFromError]=useState('')
 
 
 
 
 const handleSub =(e)=>{
  e.preventDefault()
-    console.log(FromData)
+  
+
+ if(!FromData.email || !FromData.password || !FromData.username) return setFromError('kichu bhul ache')
+
+
+
 
 }
 
@@ -40,7 +49,9 @@ const handleSub =(e)=>{
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Create an Account
         </h2>
-
+     <h2 className="text-xl font-semibold text-center text-red-500 mb-6">
+         {FromError}
+        </h2>
         <form   onSubmit={handleSub} className="space-y-4">
           {/* Full Name */}
           <div>
@@ -48,7 +59,7 @@ const handleSub =(e)=>{
               Full Name
             </label>
             <input
-            onChange={(e)=>setFromData((prev)=> ({...prev, username:e.target.value}))}
+            onChange={(e)=>setFromData((prev)=> ({...prev, username:e.target.value}) , setFromError('')) }
 
               type="text"
               placeholder="Enter your name"
@@ -62,7 +73,7 @@ const handleSub =(e)=>{
               Email
             </label>
             <input
-            onChange={(e)=>setFromData((prev)=> ({...prev, email:e.target.value}))}
+            onChange={(e)=>setFromData((prev)=> ({...prev, email:e.target.value}), setFromError(''))}
               type="email"
               placeholder="Enter your email"
               className="w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -75,6 +86,8 @@ const handleSub =(e)=>{
               Password
             </label>
             <input
+            onChange={(e)=>setFromData((prev)=> ({...prev, password:e.target.value}), setFromError(''))}
+
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
               className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
