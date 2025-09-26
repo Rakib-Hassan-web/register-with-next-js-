@@ -91,30 +91,7 @@ const handleSub =(e)=>{
             </span>
           </div>
 
-          {/* Confirm Password */}
-          <div className="relative">
-            <label className="block text-sm font-medium text-gray-600 mb-1">
-              Confirm Password
-            </label>
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              placeholder="Confirm your password"
-              className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            />
-            <span
-              className="absolute right-3 top-9 text-gray-500 cursor-pointer"
-              onClick={() =>
-                setShowConfirmPassword(!showConfirmPassword)
-              }
-            >
-              {showConfirmPassword ? (
-                <AiOutlineEyeInvisible size={20} />
-              ) : (
-                <AiOutlineEye size={20} />
-              )}
-            </span>
-          </div>
-
+        
           {/* Register Button */}
           <button
             type="submit"
