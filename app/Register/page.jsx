@@ -28,7 +28,7 @@ const page = () => {
 const options = {
   method: 'POST',
   headers: {accept: 'application/json', 'content-type': 'application/json'},
-  body: '{"email":"user.email@domain.com","password":"test@123","role":"ADMIN","username":"doejohn"}'
+  body: JSON.stringify(FromData)
 };
     
     // ----------error State-----
@@ -38,12 +38,19 @@ const options = {
 
 
 
-const handleSub =(e)=>{
+const handleSub  = async(e)=>{
  e.preventDefault()
   
 
  if(!FromData.email || !FromData.password || !FromData.username) return setFromError('kichu bhul ache')
 
+  try {
+  const response = await fetch(url, options);
+  const data = await response.json();
+  console.log(data);
+} catch (error) {
+  console.error(error);
+}
 
 
 
