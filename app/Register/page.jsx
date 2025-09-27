@@ -48,7 +48,19 @@ const page = () => {
         });
       }
 
-   
+           if(data.message  === 'Received data is not valid'){
+        toast.error('Somethig Went Wrong ', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+
 
 
 
