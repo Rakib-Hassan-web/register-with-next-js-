@@ -86,7 +86,7 @@ const page = () => {
      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-200 via-green-200 to-yellow-200">
       <div className="bg-white shadow-lg rounded-2xl w-full max-w-md p-8">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-          Create an Account
+        Login 
         </h2>
         <h2 className="text-xl font-semibold text-center text-red-500 mb-6">
          {FromError}
