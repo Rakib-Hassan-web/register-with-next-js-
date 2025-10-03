@@ -28,7 +28,7 @@ const page = () => {
   const handleSub  = async(e)=>{
     e.preventDefault()
     
-    if(!FromData.email || !FromData.password || !FromData.username) 
+    if(!FromData.email || !FromData.password ) 
       return setFromError('kichu bhul ache')
 
     try {
@@ -36,7 +36,7 @@ const page = () => {
       const data = await response.json();
 
       if(data.message  === 'Users registered successfully and verification email has been sent on your email.'){
-        toast.success('Register Successfull ', {
+        toast.success('login Successfull ', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -49,7 +49,7 @@ const page = () => {
       }
 
       if(data.message  === 'Received data is not valid'){
-        toast.error('Somethig Went Wrong ', {
+        toast.success('login Successfull', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -61,18 +61,7 @@ const page = () => {
         });
       }
 
-      if(data.message  === 'User with email or username already exists'){
-        toast.error('Email Already Exist', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "light",
-          transition: Bounce,
-        });
-      }
+
 
       console.log(data)
     } catch (error) {
