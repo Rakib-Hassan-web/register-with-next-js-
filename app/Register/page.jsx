@@ -72,7 +72,7 @@ const page = () => {
   return (
     <>
      {/* Background gradient changed here */}
-     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-200 via-green-200 to-yellow-200">
+     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">
       <div className="bg-white shadow-lg rounded-2xl w-full max-w-md p-8">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
         Login 
