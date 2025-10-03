@@ -92,11 +92,6 @@ const page = () => {
          {FromError}
         </h2>
         <form onSubmit={handleSub} className="space-y-4">
-          {/* Full Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">
-              Full Name
-            </label>
 
 
           {/* Email */}
