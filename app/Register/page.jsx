@@ -140,9 +140,9 @@ const page = () => {
 
           {/* Login Redirect */}
           <p className="text-sm text-center text-gray-600 mt-3">
-            Already have an account?{" "}
+            Don't Have Any Account{" "}
             <Link href="#" className="text-blue-500 hover:underline">
-              Login
+            Register Here
             </Link>
           </p>
         </form>
