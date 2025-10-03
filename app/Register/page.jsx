@@ -48,7 +48,7 @@ const page = () => {
         });
       }
 
-           if(data.message  === 'Received data is not valid'){
+      if(data.message  === 'Received data is not valid'){
         toast.error('Somethig Went Wrong ', {
           position: "top-right",
           autoClose: 5000,
@@ -61,8 +61,7 @@ const page = () => {
         });
       }
 
-
-                 if(data.message  === 'User with email or username already exists'){
+      if(data.message  === 'User with email or username already exists'){
         toast.error('Email Already Exist', {
           position: "top-right",
           autoClose: 5000,
@@ -75,11 +74,6 @@ const page = () => {
         });
       }
 
-
-
-
-
-
       console.log(data)
     } catch (error) {
       console.error(error);
@@ -88,7 +82,8 @@ const page = () => {
 
   return (
     <>
-     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+     {/* Background gradient changed here */}
+     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-200 via-green-200 to-yellow-200">
       <div className="bg-white shadow-lg rounded-2xl w-full max-w-md p-8">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Create an Account
@@ -102,13 +97,7 @@ const page = () => {
             <label className="block text-sm font-medium text-gray-600 mb-1">
               Full Name
             </label>
-            <input
-              onChange={(e)=>setFromData((prev)=> ({...prev, username:e.target.value}))}
-              type="text"
-              placeholder="Enter your name"
-              className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            />
-          </div>
+
 
           {/* Email */}
           <div>
@@ -119,7 +108,7 @@ const page = () => {
               onChange={(e)=>setFromData((prev)=> ({...prev, email:e.target.value}))}
               type="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
 
@@ -132,7 +121,7 @@ const page = () => {
               onChange={(e)=>setFromData((prev)=> ({...prev, password:e.target.value}))}
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
-              className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <span
               className="absolute right-3 top-9 text-gray-500 cursor-pointer"
@@ -146,10 +135,10 @@ const page = () => {
             </span>
           </div>
 
-          {/* Register Button */}
+          {/* Register Button - color changed */}
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition duration-200"
+            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200"
           >
             Register
           </button>
@@ -157,7 +146,7 @@ const page = () => {
           {/* Login Redirect */}
           <p className="text-sm text-center text-gray-600 mt-3">
             Already have an account?{" "}
-            <Link href="#" className="text-indigo-500 hover:underline">
+            <Link href="#" className="text-blue-500 hover:underline">
               Login
             </Link>
           </p>
